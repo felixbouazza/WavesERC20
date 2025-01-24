@@ -1,4 +1,4 @@
-# Waves ERC20
+# Waves ERC20
 
 Un token implémentant le standard ERC20 d'Ethereum.
 
