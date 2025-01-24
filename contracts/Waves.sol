@@ -2,7 +2,7 @@
 
 pragma solidity 0.8.28;
 
-import "../interfaces/Ierc20.sol";
+import "../interfaces/IERC20.sol";
 
 contract Waves is IERC20 {
 
@@ -24,7 +24,7 @@ contract Waves is IERC20 {
     }
 
     function transfer(address to, uint256 value) external returns (bool success) {
-        require(to != address(0));
+        require(to != address(0), "Address zero");
         balances[msg.sender] -= value;
         balances[to] += value;
         emit Transfer(msg.sender, to, value);
@@ -32,7 +32,7 @@ contract Waves is IERC20 {
     }
 
     function transferFrom(address from, address to, uint256 value) external returns (bool success) {
-        require(to != address(0));
+        require(to != address(0), "Address zero");
         balances[from] -= value;
         spenders[from][msg.sender] -= value;
         balances[to] += value;
