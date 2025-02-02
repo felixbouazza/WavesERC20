@@ -2,7 +2,7 @@
 
 pragma solidity 0.8.28;
 
-import "../interfaces/IERC20.sol";
+import "./interfaces/IERC20.sol";
 
 contract Waves is IERC20 {
 
